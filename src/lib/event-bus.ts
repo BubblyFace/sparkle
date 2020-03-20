@@ -1,5 +1,6 @@
 export class EventBus {
     constructor() {
+
     }
 
     register(dom: HTMLElement, type: string) {

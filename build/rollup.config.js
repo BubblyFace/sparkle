@@ -12,7 +12,7 @@ module.exports = [
     output: {
       file: resolveFile('dist/index.js'),
       format: 'iife',
-      name: 'helloworld',
+      name: 'sparkle',
     }, 
     plugins: [
       typescript(),

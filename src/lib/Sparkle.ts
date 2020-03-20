@@ -1,5 +1,6 @@
 import { EventBus } from './event-bus'
 import { domObserver } from './dom-observer'
+import { Roulette } from '../models/Roulette'
 
 export class Sparkle {
 
@@ -12,6 +13,7 @@ export class Sparkle {
     constructor(root: HTMLElement) {
         this.bus = new EventBus()
         this.observer = domObserver(this.bus);
+        this.root = root
 
         const observeConfig = {
             subtree: true,
@@ -22,7 +24,9 @@ export class Sparkle {
     }
 
     create(type: string, parent: HTMLElement = this.root) {
-        let aDom: HTMLElement = document.createElement('div')
+        let model: any = new Roulette()
+        let aDom: HTMLElement = model.create()
+        
         parent.appendChild(aDom)
     }
 }
